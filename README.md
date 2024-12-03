@@ -35,6 +35,8 @@
 
 ## Пример файловой структуры проекта для блога FastAPI
 
+![Снимок экрана 2024-12-03 204730](https://github.com/user-attachments/assets/1b451513-7a90-4f80-829c-928087d10ca4)
+
 |-BlogFastAPI
   |-static
   |   |-style.css
