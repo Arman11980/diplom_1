@@ -49,6 +49,8 @@
   
 ## Пример файловой структуры проекта для блога Django
 
+![Снимок экрана 2024-12-03 205032](https://github.com/user-attachments/assets/540e5508-75fb-4b05-bd9a-b9a05ba7eb2e)
+
 |-blog_site
   |-blogsite
     |-blog
