@@ -36,7 +36,7 @@
 ## Пример файловой структуры проекта для блога FastAPI
 
 ![Снимок экрана 2024-12-03 204730](https://github.com/user-attachments/assets/1b451513-7a90-4f80-829c-928087d10ca4)
-
+```
 |-BlogFastAPI
 |  |-static
 |    |-style.css
@@ -46,11 +46,11 @@
 |    |-post.html
 |  |-main.py
 |  |-requirements.txt
-  
+ ``` 
 ## Пример файловой структуры проекта для блога Django
 
 ![Снимок экрана 2024-12-03 205032](https://github.com/user-attachments/assets/540e5508-75fb-4b05-bd9a-b9a05ba7eb2e)
-
+```
 |-blog_site
   |-blogsite
     |-blog
@@ -84,7 +84,7 @@
     |-db.sqlite3
     |-manage.py
     |-requirements.txt
-    
+   ``` 
 ## Список необходимых библиотек для блога Django
 
     asgiref==3.8.1
