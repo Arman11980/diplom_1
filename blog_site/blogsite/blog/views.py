@@ -2,14 +2,16 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django.http import HttpResponse
 
+#функция запрашивает из базы данных все опубликованные статьи
 def home(request):
-    posts = Post.objects.all()
-    return render(request, 'home.html', {'posts': posts})
+    posts = Post.objects.all() # получаем все записи
+    return render(request, 'home.html', {'posts': posts}) # возвращаем отображение их в шаблоне
 
+#функция для создания поста
 def new_post(request):
-    if request.method == "POST":
+    if request.method == "POST": #форма была отправлена на сохранение
         form = PostForm(request.POST, files=request.FILES)
-        if form.is_valid():
+        if form.is_valid(): # проверка на валидацию
             post = form.save(commit=False)
             post.author = request.user
             post.save()
@@ -18,6 +20,7 @@ def new_post(request):
         form = PostForm()
     return render(request, "new_post.html", {'form': form})
 
+#функция для ввода комментариев к посту
 def post_details(request, slug):
     post = Post.objects.get(slug=slug)
     comments = Comment.objects.order_by("-created_on")
@@ -33,6 +36,7 @@ def post_details(request, slug):
         form = CommentForm()
     return render(request, "add_comment.html", {'form': form, 'post': post, 'comments': comments, 'new_comment': new_comment})
 
+#функция для удаления записей в блоге
 def delete_post(request, slug):
     post = Post.objects.get(slug=slug)
     if request.method == "POST":
@@ -40,17 +44,5 @@ def delete_post(request, slug):
         return redirect("home")
     return render(request, 'delete.html', {'post': post})
 
-def sign_up_by_html(request):
-    info = {}
-
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        repeat_password = request.POST.get('repeat_password')
-        age = request.POST.get('age')
-    return render(request, 'reg_page.html', info)
-
-def main_page(request):
-    return HttpResponse("Это главная страница")
 
 
