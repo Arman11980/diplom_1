@@ -2,6 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User #аунтификация пользователей
 from django.template.defaultfilters import slugify
 
+'''
+один из способов добавление обьектов в БД, реализован с помощью python классов, которые в последующем 
+конвертируется в SQL запросы
+'''
+
 #модель для поста
 class Post(models.Model):
     title = models.CharField(max_length=150, unique=True) #заголовок статьи
