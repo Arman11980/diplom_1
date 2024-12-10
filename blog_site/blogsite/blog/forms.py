@@ -1,6 +1,10 @@
 from django import forms
 from .models import Post, Comment
 
+'''
+Формы в Django позволяют пользователям вводить данные, которые затем могут быть обработаны и сохранены в базе данных
+'''
+
 #форма для регистрации
 class UserRegister(forms.Form):
     username = forms.CharField(max_length=30, label='Ваш логин:')
