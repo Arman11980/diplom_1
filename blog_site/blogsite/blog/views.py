@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django.http import HttpResponse
 
+'''
+Обработчики Django – это простая Python-функция, которая получает веб-запрос и возвращает ответ. Вся
+логика ответа описывается функцией. Каждый обработчик генерирует шаблон, используя
+переменные, и возвращает HTTP-ответ сформированной HTML-страницей.
+'''
+
 #функция запрашивает из базы данных все опубликованные статьи
 def home(request):
     posts = Post.objects.all() # получаем все записи
